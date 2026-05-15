@@ -1,0 +1,69 @@
+﻿id,nombre,ruc,categoria
+PROV-0001,Tech Solutions SAC,20786579303,Tecnología y Software
+PROV-0002,Grupo Logístico del Norte,20219540831,Transporte y Logística
+PROV-0003,Servicios Industriales Perú,20126855092,Mantenimiento
+PROV-0004,Distribuidora Nacional SAC,20896233790,Materia Prima
+PROV-0005,Consultora Estratégica Lima,20395310485,Consultoría Externa
+PROV-0006,Office Depot Perú,20362950628,Suministros de Oficina
+PROV-0007,Global Training Corp,20339670711,Capacitación
+PROV-0008,Marketing Digital Perú,20249827706,Publicidad
+PROV-0009,Seguridad Total SAC,20890779946,Seguridad
+PROV-0010,Clean Services Perú,20210053353,Servicios de Limpieza
+PROV-0011,Telefónica del Perú,20826600539,Telecomunicaciones
+PROV-0012,Luz del Sur,20895285932,Utilities
+PROV-0013,Seguros Pacífico,20685582861,Seguros
+PROV-0014,Transportes Cruz del Sur,20193349856,Transporte y Logística
+PROV-0015,Constructora Los Andes,20734036506,Mantenimiento
+PROV-0016,Proveedora Industrial Lima,20553035110,Materia Prima
+PROV-0017,DataCenter Perú SAC,20134126396,Tecnología y Software
+PROV-0018,Catering Gourmet Lima,20131994523,Gastos de Representación
+PROV-0019,Imprenta Nacional SAC,20200604502,Suministros de Oficina
+PROV-0020,Laboratorios QA Perú,20334760738,Calquiler de Equipos
+PROV-0021,Asesoría Legal Corp,20349817734,Servicios Profesionales
+PROV-0022,Mantenimiento Express,20642621108,Mantenimiento
+PROV-0023,Software Factory SAC,20746412689,Tecnología y Software
+PROV-0024,Courier Express Perú,20128492780,Transporte y Logística
+PROV-0025,Capacitaciones Pro SAC,20702632297,Capacitación
+PROV-0026,Suministros del Pacífico,20313500298,Materia Prima
+PROV-0027,Energía Verde SAC,20868820204,Utilities
+PROV-0028,Publicidad Creativa SAC,20797808098,Publicidad
+PROV-0029,Consulting Group Perú,20853041955,Consultoría Externa
+PROV-0030,Alquiler de Equipos SAC,20685126461,Alquiler de Equipos
+PROV-0031,Protección y Vigilancia,20550455977,Seguridad
+PROV-0032,Servicios TI del Sur,20336696312,Tecnología y Software
+PROV-0033,Transportes Rápidos SAC,20582334538,Transporte y Logística
+PROV-0034,Materiales Premium SAC,20732719211,Materia Prima
+PROV-0035,Asesoría Tributaria Lima,20398704996,Servicios Profesionales
+PROV-0036,Red de Comunicaciones SAC,20969119330,Telecomunicaciones
+PROV-0037,Fumigaciones Perú SAC,20106977991,Servicios de Limpieza
+PROV-0038,Eventos Corporativos SAC,20914763202,Gastos de Representación
+PROV-0039,Papelería Central SAC,20965241839,Suministros de Oficina
+PROV-0040,Ingeniería Aplicada SAC,20271432881,Mantenimiento
+PROV-0041,Cloud Services Perú,20849621470,Tecnología y Software
+PROV-0042,Logística Integral SAC,20553778756,Transporte y Logística
+PROV-0043,Alimentos del Valle SAC,20465341213,Gastos de Representación
+PROV-0044,Ferretería Industrial SAC,20398362082,Materia Prima
+PROV-0045,Diseño Gráfico Pro SAC,20266944844,Publicidad
+PROV-0046,Academia Empresarial SAC,20331191390,Capacitación
+PROV-0047,Seguros Continental,20919795579,Seguros
+PROV-0048,Electricidad Total SAC,20461415646,Mantenimiento
+PROV-0049,Textiles Industriales SAC,20209747451,Materia Prima
+PROV-0050,Auditoría y Control SAC,20199585092,Servicios Profesionales
+PROV-0051,Mobiliario Corporativo SAC,20507943839,Suministros de Oficina
+PROV-0052,Agencia de Viajes Corp,20203848421,Viáticos y Viajes
+PROV-0053,Hotel Business Lima,20485451171,Viáticos y Viajes
+PROV-0054,Aerolíneas del Pacífico,20469319644,Viáticos y Viajes
+PROV-0055,Rent a Car Ejecutivo,20748245888,Viáticos y Viajes
+PROV-0056,Restaurante Ejecutivo SAC,20384027113,Gastos de Representación
+PROV-0057,Servicio de Traducción SAC,20966647391,Servicios Profesionales
+PROV-0058,Pinturas Industriales SAC,20146654552,Mantenimiento
+PROV-0059,Repuestos Mecánicos SAC,20883543540,Mantenimiento
+PROV-0060,Uniformes Corp SAC,20593303705,Suministros de Oficina
+PROV-9001,Soluciones Integrales XYZ EIRL,20612345678,Consultoría Externa
+PROV-9002,Inversiones y Proyectos JML SAC,20698765432,Servicios Profesionales
+PROV-9003,Corporación Nexus Global SAC,20687654321,Tecnología y Software
+PROV-9004,Servicios Generales M&R EIRL,20676543210,Mantenimiento
+PROV-9005,Trading Internacional ABC SAC,20665432109,Materia Prima
+PROV-9006,Consultores Asociados del Perú EIRL,20654321098,Consultoría Externa
+PROV-9007,Grupo Empresarial Fénix SAC,20643210987,Servicios Profesionales
+PROV-9008,Soluciones Tech Avanzadas EIRL,20632109876,Tecnología y Software

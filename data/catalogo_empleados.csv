@@ -1,0 +1,21 @@
+﻿id,nombre,cargo,departamento,nivel_aprobacion
+EMP-001,Carlos Mendoza,Gerente de Finanzas,Finanzas,50000
+EMP-002,María García,Jefe de Compras,Compras,25000
+EMP-003,Roberto Silva,Director de Operaciones,Operaciones,100000
+EMP-004,Ana Torres,Gerente de TI,Tecnología,40000
+EMP-005,Luis Ramírez,Jefe de Logística,Logística,20000
+EMP-006,Patricia Flores,Gerente de RRHH,Recursos Humanos,30000
+EMP-007,Jorge Castillo,Jefe de Marketing,Marketing,25000
+EMP-008,Daniela Vega,Coordinador de Compras,Compras,10000
+EMP-009,Fernando Rojas,Analista de Finanzas,Finanzas,5000
+EMP-010,Sofía Herrera,Asistente Administrativo,Administración,3000
+EMP-011,Miguel Paredes,Jefe de Producción,Producción,20000
+EMP-012,Claudia Ríos,Gerente Legal,Legal,35000
+EMP-013,Ricardo Luna,Director General,Administración,200000
+EMP-014,Andrea Salazar,Jefe de Calidad,Calidad,15000
+EMP-015,Pedro Gutiérrez,Coordinador de Ventas,Ventas,15000
+EMP-016,Valeria Morales,Analista de Compras,Compras,5000
+EMP-017,Héctor Díaz,Jefe de Mantenimiento,Operaciones,15000
+EMP-018,Lucía Campos,Coordinadora de RRHH,Recursos Humanos,10000
+EMP-019,Alberto Vargas,Gerente de Ventas,Ventas,40000
+EMP-020,Carmen Delgado,Asistente de Gerencia,Administración,5000
