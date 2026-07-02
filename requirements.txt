@@ -1,0 +1,33 @@
+# ============================================
+# FORENSIA - Agente de Auditoría Forense
+# Dependencias del proyecto
+# ============================================
+
+# --- LLM y Agente ---
+langchain>=0.3.0
+langchain-openai>=0.2.0
+langchain-core>=0.3.0
+langchain-community>=0.3.0
+openai>=1.50.0
+
+# --- RAG (Base de Conocimiento) ---
+faiss-cpu>=1.7.4
+langchain-text-splitters>=0.3.0
+
+# --- Datos ---
+pandas>=2.0.0
+numpy>=1.24.0
+
+# --- Interfaz ---
+streamlit>=1.38.0
+
+# --- Visualizaciones ---
+plotly>=5.18.0
+
+# --- Utilidades ---
+python-dotenv>=1.0.0
+
+# --- Memoria persistente (opcional) ---
+# Descomenta si usas PostgreSQL:
+# langgraph-checkpoint-postgres>=0.1.0
+# psycopg[binary,pool]==3.2.6

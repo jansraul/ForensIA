@@ -21,6 +21,7 @@ from tools import (
     cargar_datos,
     obtener_herramientas,
 )
+from rag_pipeline import ejecutar_pipeline_completo, obtener_inventario
 
 
 # ============================================================================
@@ -125,6 +126,19 @@ class SentinelAgent:
 
         # 7. Estado de datos cargados
         self.datos_cargados = False
+
+        # 8. Inicializar RAG (base de conocimiento)
+        self.rag_activo = False
+        try:
+            resultado_rag = ejecutar_pipeline_completo(api_key=OPENAI_API_KEY)
+            self.rag_activo = "✅" in resultado_rag
+            if self.rag_activo:
+                print(f"  📚 RAG: Base de conocimiento cargada")
+            else:
+                print(f"  ⚠️ RAG: {resultado_rag}")
+        except Exception as e:
+            print(f"  ⚠️ RAG no disponible: {e}")
+            self.rag_activo = False
 
     def cargar_dataset(self, path_transacciones=None, path_proveedores=None, path_empleados=None):
         """
@@ -264,15 +278,25 @@ class SentinelAgent:
 
     def obtener_info(self):
         """Retorna información del agente."""
-        return {
+        info = {
             "nombre": "FORENSIA",
-            "version": "2.0",
+            "version": "3.0",
             "modelo": MODEL_NAME,
             "herramientas": [t.name for t in self.tools],
             "datos_cargados": self.datos_cargados,
             "mensajes_en_memoria": len(self.historial_mensajes),
             "memoria_persistente": self.memoria_persistente,
+            "rag_activo": self.rag_activo,
         }
+        
+        if self.rag_activo:
+            try:
+                inventario = obtener_inventario()
+                info["documentos_rag"] = len(inventario)
+            except Exception:
+                info["documentos_rag"] = 0
+        
+        return info
 
 
 # ============================================================================

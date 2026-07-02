@@ -16,6 +16,9 @@ from typing import Optional
 import json
 from datetime import datetime
 
+# Importar pipeline RAG
+from rag_pipeline import buscar_normativa as _buscar_en_base, obtener_inventario
+
 # ============================================================================
 # VARIABLE GLOBAL - DataFrame de transacciones
 # ============================================================================
@@ -858,6 +861,73 @@ def generar_reporte_ejecutivo() -> str:
 
 
 # ============================================================================
+# HERRAMIENTA 11: CONSULTAR NORMATIVA (RAG)
+# ============================================================================
+
+@tool
+def consultar_normativa(consulta: str, tema: Optional[str] = None) -> str:
+    """
+    Busca información en la base de conocimiento de normativa de auditoría.
+    Consulta documentos como NIA 240, COSO, ACFE, SOX y políticas internas
+    para respaldar hallazgos con evidencia normativa verificable.
+    
+    Args:
+        consulta: Pregunta sobre normativa, controles, procedimientos o políticas.
+        tema: Filtro opcional por tema (ej: "NIA 240", "COSO", "ACFE", "SOX", "Políticas").
+    
+    Returns:
+        Fragmentos relevantes con fuente, sección y contenido.
+    """
+    # Mapear tema a topic del metadata
+    filtro_topic = None
+    if tema:
+        tema_lower = tema.lower()
+        if "nia" in tema_lower or "240" in tema_lower:
+            filtro_topic = "NIA 240 - Fraude en Auditoría"
+        elif "coso" in tema_lower:
+            filtro_topic = "COSO - Control Interno"
+        elif "acfe" in tema_lower:
+            filtro_topic = "ACFE - Fraude Ocupacional"
+        elif "sox" in tema_lower:
+            filtro_topic = "SOX - Cumplimiento"
+        elif "politic" in tema_lower or "interna" in tema_lower:
+            filtro_topic = "Políticas de Industria Nacional SAC"
+    
+    resultados = _buscar_en_base(
+        query=consulta,
+        k=4,
+        filtro_topic=filtro_topic,
+    )
+    
+    if not resultados or (len(resultados) == 1 and "⚠️" in resultados[0].get("contenido", "")):
+        return json.dumps({
+            "estado": "sin_resultados",
+            "mensaje": "No se encontró información relevante en la base de conocimiento para esta consulta.",
+            "sugerencia": "Intenta reformular la pregunta o consulta sobre: NIA 240, COSO, ACFE, SOX o Políticas internas."
+        }, ensure_ascii=False)
+    
+    # Formatear resultados con fuentes
+    fragmentos_formateados = []
+    for r in resultados:
+        fragmentos_formateados.append({
+            "fuente": r["fuente"],
+            "seccion": r["seccion"],
+            "topic": r["topic"],
+            "relevancia": r["relevancia"],
+            "contenido": r["contenido"][:600],  # Limitar para no saturar contexto
+        })
+    
+    respuesta = {
+        "estado": "encontrado",
+        "total_fragmentos": len(fragmentos_formateados),
+        "fragmentos": fragmentos_formateados,
+        "nota": "Cita siempre la fuente y sección al usar esta información en tu respuesta."
+    }
+    
+    return json.dumps(respuesta, ensure_ascii=False, indent=2, default=str)
+
+
+# ============================================================================
 # LISTA DE TODAS LAS HERRAMIENTAS (para el agente)
 # ============================================================================
 
@@ -874,4 +944,5 @@ def obtener_herramientas():
         analisis_benford,
         analizar_notas_credito,
         generar_reporte_ejecutivo,
+        consultar_normativa,
     ]

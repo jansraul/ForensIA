@@ -373,13 +373,14 @@ with st.sidebar:
                             "content": (
                                 "🤖 **FORENSIA activado.**\n\n"
                                 "Soy tu agente de auditoría forense. He cargado el dataset de "
-                                "transacciones y estoy listo para analizarlo.\n\n"
+                                "transacciones y la base de conocimiento normativa.\n\n"
                                 "**¿Por dónde quieres empezar?** Algunas opciones:\n"
                                 "- 📊 *\"Dame un resumen general del dataset\"*\n"
                                 "- 🔍 *\"Busca transacciones duplicadas\"*\n"
                                 "- 👻 *\"Analiza proveedores sospechosos\"*\n"
                                 "- ⏰ *\"Detecta transacciones fuera de horario\"*\n"
                                 "- 📈 *\"Aplica la Ley de Benford\"*\n"
+                                "- 📚 *\"¿Qué dice la NIA 240 sobre el triángulo del fraude?\"*\n"
                                 "- 📋 *\"Genera un reporte ejecutivo completo\"*"
                             )
                         }
@@ -419,6 +420,23 @@ with st.sidebar:
                 <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #f59e0b; 
                             background: rgba(245,158,11,0.1); padding: 4px 8px; border-radius: 6px; margin-top: 4px;">
                     💭 Memoria: Sesión
+                </div>
+                """, unsafe_allow_html=True)
+            
+            # Indicador RAG
+            if info.get('rag_activo', False):
+                docs_rag = info.get('documentos_rag', 0)
+                st.markdown(f"""
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #8b5cf6; 
+                            background: rgba(139,92,246,0.1); padding: 4px 8px; border-radius: 6px; margin-top: 4px;">
+                    📚 RAG: {docs_rag} documentos
+                </div>
+                """, unsafe_allow_html=True)
+            else:
+                st.markdown("""
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #6b7280; 
+                            background: rgba(107,114,128,0.1); padding: 4px 8px; border-radius: 6px; margin-top: 4px;">
+                    📚 RAG: No disponible
                 </div>
                 """, unsafe_allow_html=True)
         
